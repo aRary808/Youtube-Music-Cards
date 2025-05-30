@@ -1,8 +1,68 @@
-/*
+.music-card {
+    width: 308px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    border-radius: 1.25rem;
+    border: 1px solid rgb(0,0,0);
+    overflow: hidden;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.bgd-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
 
-If your plugin does not need CSS, delete this file.
+}
 
-*/
+.glass-effect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: #eaeaea66;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px); /* for Safari support */
+    color: #eaeaea;
+}
+
+.album-cover {
+    height: 256px;
+    width: 256px;
+}
+
+.text-container {
+    width: 256px;
+}
+
+.title {
+    font-size: 2.25rem;
+}
+
+.artist {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    gap: 0.5rem;
+}
+
+.sample-tag {
+    margin: 0rem;
+    background-color: #8A5CF51A;
+    color: #8A5CF5;
+    padding: 0.13rem 0.5rem;
+    border-radius: 10rem;
+}
