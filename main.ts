@@ -1,5 +1,5 @@
 import { Plugin } from 'obsidian';
-import { Innertube } from 'youtubei.js';
+import { Innertube, UniversalCache } from 'youtubei.js';
 
 /*
  Planning this out:
@@ -12,13 +12,14 @@ import { Innertube } from 'youtubei.js';
 export default class YTMusicPlugin extends Plugin {
 
 	musicCard : HTMLElement | null = null;
+	
 
 	async onload() {
 		console.log('YTMusicPlugin loaded');
 
 		// Create a music card element
 		this.musicCard = document.createElement('div');
-		this.musicCard.className = 'yt-music-card';
+		this.musicCard.className = 'music-card';
 		this.musicCard.innerHTML = `
 			<h2>Now Playing</h2>
 			<p>Track: Unknown</p>
@@ -26,9 +27,21 @@ export default class YTMusicPlugin extends Plugin {
 			<button id="play-button">Play</button>
 			<button id="pause-button">Pause</button>
 		`;
+		this.registerObsidianProtocolHandler("youtube-fetch", this.loadMusicData.bind(this));
+		//window.open = )
 	}
 
 	async onunload() {
 		console.log('YTMusicPlugin unloaded');
+	}
+
+	async loadMusicData(vidId : string) {
+		const yt = await Innertube.create({ cache: new UniversalCache(true) });
+		const videoInfo = await yt.actions.execute('/player', {
+			vidId,
+			client: 'YTMUSIC',
+			parse: true			
+	});
+	return videoInfo;
 	}
 }
