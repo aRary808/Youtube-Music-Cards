@@ -1,4 +1,5 @@
 import { Plugin } from 'obsidian';
+import { Innertube } from 'youtubei.js';
 
 /*
  Planning this out:

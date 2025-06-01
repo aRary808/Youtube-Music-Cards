@@ -1,3 +1,11 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #353535;
+}
+
 .music-card {
     width: 308px;
     height: 550px;
@@ -7,7 +15,7 @@
     padding: 0;
     position: relative;
     border-radius: 1.25rem;
-    border: 1px solid rgb(0,0,0);
+    /* border: 1px solid rgb(0,0,0); */
     overflow: hidden;
 }
 
@@ -37,19 +45,18 @@
 .album-cover {
     height: 256px;
     width: 256px;
-}
-
-.text-container {
-    width: 256px;
+    margin-top: 1.188rem;
+    border-radius: 0.625rem;
 }
 
 .title {
     font-size: 2.25rem;
+    color: #353535;
 }
 
 .artist {
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .tag-container {
@@ -65,4 +72,18 @@
     color: #8A5CF5;
     padding: 0.13rem 0.5rem;
     border-radius: 10rem;
+}
+.divider {
+    height: 2px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    background: rgba(0, 0, 0, 0.05); /* Light translucent black */
+    border: none;
+    border-radius: 9999px; /* Fully rounded corners */
+}
+
+
+.text-container {
+    width: 256px;
+    color: #353535;
 }
